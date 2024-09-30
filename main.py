@@ -8,16 +8,22 @@ from collections import deque
 import os
 from dotenv import load_dotenv
 
+# โหลด environment variables
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
+# ตรวจสอบว่า TOKEN ถูกตั้งค่าหรือไม่
+if TOKEN is None:
+    print("Error: DISCORD_TOKEN is not set in .env")
+    exit(1)
+
+# กำหนด intents
 intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
 
+# สร้าง bot
 bot = commands.Bot(command_prefix='.', intents=intents)
-
-DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 class MusicControlView(View):
     def __init__(self, ctx):
