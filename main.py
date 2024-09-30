@@ -5,17 +5,17 @@ import yt_dlp
 from discord.ext import commands
 from discord.ui import Button, View
 from collections import deque
-import os
-from dotenv import load_dotenv
+# import os
+# from dotenv import load_dotenv
 
 # โหลด environment variables
-load_dotenv()
-TOKEN = os.getenv("DISCORD_TOKEN")
-
-# ตรวจสอบว่า TOKEN ถูกตั้งค่าหรือไม่
-if TOKEN is None:
-    print("Error: DISCORD_TOKEN is not set in .env")
-    exit(1)
+# load_dotenv()
+# TOKEN = os.getenv("DISCORD_TOKEN")
+TOKEN = 'MTI2NDcxMjg1MTYwODgzNDA2OA.G1S98V.UvZHQqNV-PeK2mEm8ZpZXdw8KzIQBUtLncbdks'
+# # ตรวจสอบว่า TOKEN ถูกตั้งค่าหรือไม่
+# if TOKEN is None:
+#     print("Error: DISCORD_TOKEN is not set in .env")
+#     exit(1)
 
 # กำหนด intents
 intents = discord.Intents.default()
